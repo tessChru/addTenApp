@@ -7,17 +7,17 @@ const port = process.env.port || 7000;
 app.get('/:num1/:num2', (req, res) => {         
 
     var num1 = req.params.num1;  
-    var num2 = req.params.num1; 
+    var num2 = req.params.num2; 
 
-    var responseObj = { "sum": + ' ' + Number(num1) + Number(num2)}
-    res.send('Welcome to the home page: ' + JSON.stringify(responseObj));
+    var responseObj = { "sum": + Number(num1) + Number(num2)}
+    res.send('<h4>' + JSON.stringify(responseObj) + '</h4>');
 });
 
 app.get('/:num1', (req, res) => {         
 
     var num1 = req.params.num1;  
 
-    var responseObj = { "sum": + ' ' + 10 + Number(num1)}
+    var responseObj = { "sum": 10 + Number(num1)}
     res.send('<h4>' + JSON.stringify(responseObj) + '</h4>');
 });
 
